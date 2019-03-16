@@ -59,13 +59,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					SERBUw==
-					</data>
+					<data>SERBUw==</data>
 					<key>Replace</key>
-					<data>
-					SERFRg==
-					</data>
+					<data>SERFRg==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -73,13 +69,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					R0ZYMA==
-					</data>
+					<data>R0ZYMA==</data>
 					<key>Replace</key>
-					<data>
-					SUdQVQ==
-					</data>
+					<data>SUdQVQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -87,13 +79,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					SEVDSQ==
-					</data>
+					<data>SEVDSQ==</data>
 					<key>Replace</key>
-					<data>
-					SU1FSQ==
-					</data>
+					<data>SU1FSQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -101,13 +89,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					R1BSVwI=
-					</data>
+					<data>R1BSVwI=</data>
 					<key>Replace</key>
-					<data>
-					WFBSVwI=
-					</data>
+					<data>WFBSVwI=</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -115,13 +99,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X1BUUwE=
-					</data>
+					<data>X1BUUwE=</data>
 					<key>Replace</key>
-					<data>
-					WlBUUwE=
-					</data>
+					<data>WlBUUwE=</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -129,13 +109,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X1BUUwk=
-					</data>
+					<data>X1BUUwk=</data>
 					<key>Replace</key>
-					<data>
-					WlBUUwk=
-					</data>
+					<data>WlBUUwk=</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -143,13 +119,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X1dBSwE=
-					</data>
+					<data>X1dBSwE=</data>
 					<key>Replace</key>
-					<data>
-					WldBSwE=
-					</data>
+					<data>WldBSwE=</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -157,13 +129,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X1dBSwk=
-					</data>
+					<data>X1dBSwk=</data>
 					<key>Replace</key>
-					<data>
-					WldBSwk=
-					</data>
+					<data>WldBSwk=</data>
 				</dict>
 			</array>
 			<key>ReuseFFFF</key>
@@ -252,9 +220,7 @@
 				<key>Key</key>
 				<string>class-code</string>
 				<key>Value</key>
-				<data>
-				/////w==
-				</data>
+				<data>/////w==</data>
 			</dict>
 		</array>
 		<key>Audio</key>
@@ -313,6 +279,11 @@
 		<string>1920x1080</string>
 		<key>Theme</key>
 		<string>embedded</string>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+			<string>Recovery</string>
+		</array>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -356,17 +327,13 @@
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
-				<data>
-				AQAAdSU=
-				</data>
+				<data>AQAAdSU=</data>
 				<key>InfoPlistPatch</key>
 				<false/>
 				<key>Name</key>
 				<string>IOGraphicsFamily</string>
 				<key>Replace</key>
-				<data>
-				AQAA6yU=
-				</data>
+				<data>AQAA6yU=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -374,9 +341,7 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				g32MEA==
-				</data>
+				<data>g32MEA==</data>
 				<key>InfoPlistPatch</key>
 				<false/>
 				<key>MatchOS</key>
@@ -384,9 +349,7 @@
 				<key>Name</key>
 				<string>AppleUSBXHCIPCI</string>
 				<key>Replace</key>
-				<data>
-				g32MGQ==
-				</data>
+				<data>g32MGQ==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -394,9 +357,7 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				gflSqgAAdSk=
-				</data>
+				<data>gflSqgAAdSk=</data>
 				<key>InfoPlistPatch</key>
 				<false/>
 				<key>MatchOS</key>
@@ -404,9 +365,7 @@
 				<key>Name</key>
 				<string>AirPortBrcm4360</string>
 				<key>Replace</key>
-				<data>
-				gflSqgAAZpA=
-				</data>
+				<data>gflSqgAAZpA=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -414,17 +373,13 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				MdtMPX3YdRI=
-				</data>
+				<data>MdtMPX3YdRI=</data>
 				<key>InfoPlistPatch</key>
 				<false/>
 				<key>Name</key>
 				<string>AirPortBrcm4360</string>
 				<key>Replace</key>
-				<data>
-				Mdv/w5CQkJA=
-				</data>
+				<data>Mdv/w5CQkJA=</data>
 			</dict>
 		</array>
 	</dict>
@@ -437,9 +392,7 @@
 		<key>MLB</key>
 		<string>XX-MASKED-XX</string>
 		<key>ROM</key>
-		<data>
-		WFgtTUFTS0VELVhY
-		</data>
+		<data>WFgtTUFTS0VELVhY</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
