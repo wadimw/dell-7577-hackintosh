@@ -1,0 +1,1 @@
+Zip from https://osxlatitude.com/forums/topic/10389-help-dell-inspiron-15-7577/?tab=comments#comment-85984
