@@ -15799,17 +15799,9 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LEqual (SBRG, Zero))
-                {
-                    Return (Zero)
-                }
-
-                If (LEqual (GPEN, Zero))
-                {
-                    Return (Zero)
-                }
-
+                
                 Return (0x0F)
+
             }
         }
     }
@@ -16679,17 +16671,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                If (LLess (OSYS, 0x07DC))
-                {
-                    Return (SBFI)
-                }
-
-                If (LEqual (SDM0, Zero))
-                {
-                    Return (ConcatenateResTemplate (SBFB, SBFG))
-                }
-
-                Return (ConcatenateResTemplate (SBFB, SBFI))
+                Return (ConcatenateResTemplate (SBFB, SBFG))
             }
         }
 
@@ -19573,7 +19555,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                     Store (0x07DD, OSYS)
                 }
 
-                If (_OSI ("Windows 2015"))
+                If(LOr(_OSI("Darwin"),_OSI("Windows 2015")))
                 {
                     Store (0x07DF, OSYS)
                 }

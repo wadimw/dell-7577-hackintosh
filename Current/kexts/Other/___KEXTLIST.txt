@@ -15,5 +15,7 @@ FakeSMC_SMMSensors.kext
 Lilu.kext
 RealtekRTL8111.kext
 USBInjectAll.kext
+VoodooI2C.kext
+VoodooI2CHID.kext
 VoodooPS2Controller.kext
 WhateverGreen.kext
