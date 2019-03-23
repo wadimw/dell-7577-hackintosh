@@ -251,11 +251,6 @@
 		<key>UIScale</key>
 		<integer>1</integer>
 	</dict>
-	<key>CPU</key>
-	<dict>
-		<key>UseARTFrequency</key>
-		<false/>
-	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>AddProperties</key>
@@ -263,25 +258,97 @@
 			<dict>
 				<key>Device</key>
 				<string>NVidia</string>
-				<key>Disabled</key>
-				<true/>
+				<key>Key</key>
+				<string>name</string>
+				<key>Value</key>
+				<data>I2Rpc3BsYXkA</data>
+				<key>Comment</key>
+				<string>Inject &quot;name&quot; as (data)&quot;#display&quot; to disable graphics drivers on NVidia</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Key</key>
+				<string>IOName</string>
+				<key>Value</key>
+				<string>#display</string>
+				<key>Comment</key>
+				<string>Inject &quot;IOName&quot; as &quot;#display&quot; to disable graphics drivers on NVidia</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
 				<key>Key</key>
 				<string>class-code</string>
 				<key>Value</key>
 				<data>/////w==</data>
+				<key>Comment</key>
+				<string>Inject bogus class-code to prevent graphics drivers loading for NVidia</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>ATI</string>
+				<key>Key</key>
+				<string>name</string>
+				<key>Value</key>
+				<data>I2Rpc3BsYXkA</data>
+				<key>Comment</key>
+				<string>Inject &quot;name&quot; as (data)&quot;#display&quot; to disable graphics drivers on AMD</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>ATI</string>
+				<key>Key</key>
+				<string>IOName</string>
+				<key>Value</key>
+				<string>#display</string>
+				<key>Comment</key>
+				<string>Inject &quot;IOName&quot; as &quot;#display&quot; to disable graphics drivers on AMD</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>ATI</string>
+				<key>Key</key>
+				<string>class-code</string>
+				<key>Value</key>
+				<data>/////w==</data>
+				<key>Comment</key>
+				<string>Inject bogus class-code to prevent graphics drivers loading for AMD</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>ATI</string>
+				<key>Key</key>
+				<string>vendor-id</string>
+				<key>Value</key>
+				<data>//8AAA==</data>
+				<key>Comment</key>
+				<string>Inject bogus vendor-id to prevent graphics drivers loading for AMD</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>ATI</string>
+				<key>Key</key>
+				<string>device-id</string>
+				<key>Value</key>
+				<data>//8AAA==</data>
+				<key>Comment</key>
+				<string>Inject bogus device-id to prevent graphics drivers loading for AMD</string>
 			</dict>
 		</array>
 		<key>Audio</key>
 		<dict>
-			<key>AFGLowPowerState</key>
-			<true/>
 			<key>Inject</key>
 			<integer>13</integer>
+			<key>AFGLowPowerState</key>
+			<true/>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
 		<key>FakeID</key>
 		<dict>
+			<key>#Kaby Lake-Comment</key>
+			<string>To avoid automatic Clover fake device-id (Skylake) injection</string>
 			<key>IntelGFX</key>
 			<string>0x59168086</string>
 		</dict>
@@ -297,10 +364,17 @@
 		<key>UseIntelHDMI</key>
 		<true/>
 	</dict>
+	<key>DisableDrivers</key>
+	<array>
+		<string>VBoxHfs</string>
+	</array>
 	<key>GUI</key>
 	<dict>
-		<key>Language</key>
-		<string>es:0</string>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+			<string>Recovery</string>
+		</array>
 		<key>Mouse</key>
 		<dict>
 			<key>DoubleClick</key>
@@ -327,14 +401,11 @@
 		<string>1920x1080</string>
 		<key>Theme</key>
 		<string>embedded</string>
-		<key>Hide</key>
-		<array>
-			<string>Preboot</string>
-			<string>Recovery</string>
-		</array>
 	</dict>
 	<key>Graphics</key>
 	<dict>
+		<key>ig-platform-id</key>
+		<string>0x59160000</string>
 		<key>Inject</key>
 		<dict>
 			<key>ATI</key>
@@ -346,25 +417,23 @@
 		</dict>
 		<key>NvidiaSingle</key>
 		<false/>
-		<key>ig-platform-id</key>
-		<string>0x59160000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
-		<key>AppleIntelCPUPM</key>
-		<false/>
 		<key>AppleRTC</key>
 		<true/>
-		<key>Debug</key>
-		<false/>
 		<key>DellSMBIOSPatch</key>
-		<false/>
-		<key>KernelCpu</key>
 		<false/>
 		<key>KernelLapic</key>
 		<false/>
 		<key>KernelPm</key>
 		<true/>
+		<key>AppleIntelCPUPM</key>
+		<false/>
+		<key>Debug</key>
+		<false/>
+		<key>KernelCpu</key>
+		<false/>
 		<key>KernelXCPM</key>
 		<false/>
 		<key>KextsToPatch</key>
