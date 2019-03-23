@@ -13,7 +13,7 @@ Not working:
 - USB 3 pendrive (Doesn't show at all in any port, however USB2 devices like keyboard, mouse, pendrive work; also Android phone in USB tethering mode works too)
 - ~~Integrated WIFI (didn't yet buy replacement card, although I apparently already have needed kexts for dw1560)~~ Bought Lenovo PN:20-200480 (Broadcomm BCM94352Z) and it works (needed Lenovo drivers on Windows)
 - Brightness adjustment buttons (but brightness works in settings)
-- Screen disable on lid close
+- ~~Screen disable on lid close~~ apparently it was fixed somewhere along the line, probably when removed those excessive DSDT fixes
 - Goodix Fingerprint (likely won't work anyway but would be wonderful if it did)
 
 Working:
