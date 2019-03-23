@@ -20502,6 +20502,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
             Return (One)
         }
 
+        Method (XTB2, 2) { XTBT(Arg0, Arg1) }
         Method (XTBT, 2, Serialized)
         {
             ADBG ("XTBT")
@@ -20556,7 +20557,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                         Return (Zero)
                     }
 
-                    XTBT (TBSE, CPGN)
+                    XTB2 (TBSE, CPGN)
                 }
 
                 Return (Zero)
