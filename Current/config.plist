@@ -234,21 +234,15 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>nv_disable=1 -disablegfxfirmware</string>
-		<key>Debug</key>
-		<false/>
-		<key>DefaultLoader</key>
-		<string>boot.efi</string>
+		<string>dart=0 nv_disable=1 -disablegfxfirmware -cdfon -igfxnohdmi lilucpu=9</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
-		<key>Legacy</key>
-		<string>PBR</string>
+		<key>NeverHibernate</key>
+		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
 		<integer>5</integer>
-		<key>XMPDetection</key>
-		<false/>
 	</dict>
 	<key>BootGraphics</key>
 	<dict>
