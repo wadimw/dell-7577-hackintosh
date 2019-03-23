@@ -1,3 +1,4 @@
 
 ACPI workspace/patched/compiled/*
 **/*.kext
+Install/*.zip
