@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Sat Mar 16 21:45:35 2019
+ * Disassembly of DSDT.aml, Sat Mar 23 19:55:10 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
@@ -46,7 +46,6 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     External (_PR_.PKGA, UnknownObj)    // (from opcode)
     External (_PR_.POWS, UnknownObj)    // (from opcode)
     External (_PR_.PR00, DeviceObj)    // (from opcode)
-    External (_PR_.PR00._PPC, MethodObj)    // 0 Arguments
     External (_PR_.PR00.LPSS, PkgObj)    // (from opcode)
     External (_PR_.PR00.TPSS, PkgObj)    // (from opcode)
     External (_PR_.TRPD, UnknownObj)    // (from opcode)
@@ -4469,12 +4468,11 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                 If (LEqual (PM6H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
-                    Store (Zero, ECRW)
-                }
-                If (PM0H)
-                {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
-                    Store (Zero, F0LN)
+                    Store (Zero, ECRW (If (PM0H)
+                            {
+                                CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
+                                Store (Zero, F0LN)
+                            }))
                 }
 
                 If (LEqual (PM0H, One))

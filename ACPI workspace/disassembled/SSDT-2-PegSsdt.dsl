@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-2-PegSsdt.aml, Sat Mar 16 21:45:36 2019
+ * Disassembly of SSDT-2-PegSsdt.aml, Sat Mar 23 19:55:10 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -27,8 +27,6 @@ DefinitionBlock ("", "SSDT", 2, "PegSsd", "PegSsdt", 0x00001000)
     External (_SB_.PCI0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.GEXP.GEPS, MethodObj)    // 2 Arguments (from opcode)
     External (_SB_.PCI0.GEXP.SGEP, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LTRZ, IntObj)
-    External (_SB_.PCI0.OBFZ, IntObj)
     External (_SB_.PCI0.PEG0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0._ADR, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)    // (from opcode)
