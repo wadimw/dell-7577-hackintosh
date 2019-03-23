@@ -4468,11 +4468,12 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                 If (LEqual (PM6H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
-                    Store (Zero, ECRW (If (PM0H)
-                            {
-                                CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
-                                Store (Zero, F0LN)
-                            }))
+                    Store (Zero, ECRW)
+                }
+                If (PM0H)
+                {
+                    CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
+                    Store (Zero, F0LN)
                 }
 
                 If (LEqual (PM0H, One))
