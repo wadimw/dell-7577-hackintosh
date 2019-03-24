@@ -16671,7 +16671,17 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                Return (ConcatenateResTemplate (SBFB, SBFG))
+                If (LLess (OSYS, 0x07DC))
+                {
+                    Return (SBFI)
+                }
+
+                If (LEqual (SDM0, Zero))
+                {
+                    Return (ConcatenateResTemplate (SBFB, SBFG))
+                }
+
+                Return (ConcatenateResTemplate (SBFB, SBFI))
             }
         }
 
