@@ -7,11 +7,6 @@ CodecCommander.kext
 FakePCIID.kext
 FakePCIID_Broadcom_WiFi.kext
 FakeSMC.kext
-FakeSMC_ACPISensors.kext
-FakeSMC_CPUSensors.kext
-FakeSMC_GPUSensors.kext
-FakeSMC_LPCSensors.kext
-FakeSMC_SMMSensors.kext
 Lilu.kext
 RealtekRTL8111.kext
 USBInjectAll.kext
