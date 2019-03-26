@@ -6,6 +6,7 @@ BrcmPatchRAM2.kext
 CodecCommander.kext
 FakePCIID.kext
 FakePCIID_Broadcom_WiFi.kext
+FakePCIID_XHCIMux.kext
 FakeSMC.kext
 Lilu.kext
 RealtekRTL8111.kext
