@@ -29,21 +29,22 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                 "port-count", Buffer() { 26, 0, 0, 0 },
                 "ports", Package()
                 {
-                    "HS01", Package()
+                    "HS01", Package() //USB2 Left
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0, //USB2
                         "port", Buffer() { 1, 0, 0, 0 },
                     },
-                    "HS02", Package()
+                    "HS02", Package() //USB2 Far right
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0, //USB2
                         "port", Buffer() { 2, 0, 0, 0 },
                     },
-                    "HS03", Package()
+                    "HS03", Package() //USB2 Near right
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0, //USB2
                         "port", Buffer() { 3, 0, 0, 0 },
                     },
+                    /*
                     "HS04", Package()
                     {
                         "UsbConnector", 3,
@@ -64,11 +65,15 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 7, 0, 0, 0 },
                     },
-                    "HS08", Package()
+                    */
+                    /*
+                    "HS08", Package() //Fingerprint scanner, can be disabled too
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 255,
                         "port", Buffer() { 8, 0, 0, 0 },
                     },
+                    */
+                    /*
                     "HS09", Package()
                     {
                         "UsbConnector", 3,
@@ -84,11 +89,13 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 11, 0, 0, 0 },
                     },
-                    "HS12", Package()
+                    */
+                    "HS12", Package() //Webcam
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 255,
                         "port", Buffer() { 12, 0, 0, 0 },
                     },
+                    /*
                     "HS13", Package()
                     {
                         "UsbConnector", 3,
@@ -99,21 +106,23 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 14, 0, 0, 0 },
                     },
-                    "SS01", Package()
+                    */
+                    "SS01", Package() //USB3 Left
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 3, //USB3
                         "port", Buffer() { 17, 0, 0, 0 },
                     },
-                    "SS02", Package()
+                    "SS02", Package() //USB3 Far right
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 3, //USB3
                         "port", Buffer() { 18, 0, 0, 0 },
                     },
-                    "SS03", Package()
+                    "SS03", Package() //USB3 Near right
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 3, //USB3
                         "port", Buffer() { 19, 0, 0, 0 },
                     },
+                    /*
                     "SS04", Package()
                     {
                         "UsbConnector", 3,
@@ -159,6 +168,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 16, 0, 0, 0 },
                     },
+                    */
                 },
             },
         })
