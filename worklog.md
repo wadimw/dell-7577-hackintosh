@@ -27,3 +27,23 @@ IT BOOTS, omg it does. WAY sooner than expected. I got flashed with some ugly co
 Since trackpad not working prevents me from checking anything else (I don't have a mouse), I'll switch to
 * VoodooPS2Controller.kext  1.9.2 (RehabMan's)
 at least until implementing VoodooI2C.
+
+For now it works. Currently
+Not working:
+* Audio
+* Backlight
+* Backlight keys
+* Advanced trackpad
+* Lid closing - neither screen off nor sleep
+* dGPU disable - in IORegExp it sits under PEGP@0 (10de 1c20)
+Working:
+* Boot
+* Wifi
+* iGPU identifies correctly
+* Graphics (werid flash no more)
+* Sleep (I'm surprised)
+Can't check:
+* 5GHz WiFi (don't have it currently)
+* Bluetooth (my card is probably broken, because it does not work on Windows too)
+
+I will now restore my SMBIOS with Clover Configurator because it is annoying that everything is logged out. For this I will also enable Dell SMBIOS Patch in config.plist. When I'm at it, I will set audio layout to 13 (as was previously), add boot flag -wegnoegpu for dGPU disable by WhateverGreen.
