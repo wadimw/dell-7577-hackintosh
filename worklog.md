@@ -24,3 +24,6 @@ Adding new kext:
 * AHCIPortInjector.kext (no version, from InsanelyMac)
 IT BOOTS, omg it does. WAY sooner than expected. I got flashed with some ugly colors during Apple logo loading, also touchpad does not work but other than that I am amazed.
 
+Since trackpad not working prevents me from checking anything else (I don't have a mouse), I'll switch to
+* VoodooPS2Controller.kext  1.9.2 (RehabMan's)
+at least until implementing VoodooI2C.
