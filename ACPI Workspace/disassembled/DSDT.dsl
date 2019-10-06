@@ -4469,11 +4469,12 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                 If (LEqual (PM6H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
-                    Store (Zero, ECRW (If (PM0H)
-                            {
-                                CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
-                                Store (Zero, F0LN)
-                            }))
+                    Store (Zero, ECRW)
+                }
+                If (PM0H)
+                {
+                    CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
+                    Store (Zero, F0LN)
                 }
 
                 If (LEqual (PM0H, One))
@@ -20506,6 +20507,8 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
             Return (One)
         }
 
+        Method(XTB2, 2, Serialized) { XTBT(Arg0, Arg1) }
+
         Method (XTBT, 2, Serialized)
         {
             ADBG ("XTBT")
@@ -20560,7 +20563,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                         Return (Zero)
                     }
 
-                    XTBT (TBSE, CPGN)
+                    XTB2 (TBSE, CPGN)
                 }
 
                 Return (Zero)
