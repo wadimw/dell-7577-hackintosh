@@ -1,0 +1,10 @@
+AirportBrcmFixup.kext
+AppleALC.kext
+BrcmFirmwareRepo.kext
+BrcmPatchRAM2.kext
+Lilu.kext
+RealtekRTL8111.kext
+USBInjectAll.kext
+VirtualSMC.kext
+VoodooPS2Controller.kext
+WhateverGreen.kext

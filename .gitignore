@@ -1,2 +1,4 @@
 **/*.kext
 **/*.aml
+Downloads
+**/*.plist
