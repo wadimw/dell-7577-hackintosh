@@ -35,7 +35,7 @@ Not working:
 * Backlight keys
 * Advanced trackpad
 * Lid closing - neither screen off nor sleep
-* dGPU disable - in IORegExp it sits under PEGP@0 (10de 1c20)
+* ~~dGPU disable - in IORegExp it sits under PEGP@0 (10de 1c20)~~
 Working:
 * Boot
 * Wifi
@@ -49,3 +49,5 @@ Can't check:
 I will now restore my SMBIOS with Clover Configurator because it is annoying that everything is logged out. For this I will also enable Dell SMBIOS Patch in config.plist. When I'm at it, I will set audio layout to 13 (as was previously), add boot flag -wegnoegpu for dGPU disable by WhateverGreen.
 
 Except successful SMBIOS serial number change nothing else has changed, so I'll remove the boot flag. Now to the ACPI disassembly and patching to disable the humming of fans.
+
+By adding SSDT-DDGPU.dsl the dGPU is successfully disabled.
