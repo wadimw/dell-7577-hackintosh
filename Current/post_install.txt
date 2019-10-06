@@ -1,2 +1,0 @@
-Disable safe sleep:
-(In Terminal) sudo pmset -a hibernatemode 0
