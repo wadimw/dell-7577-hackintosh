@@ -8,3 +8,4 @@ USBInjectAll.kext
 VirtualSMC.kext
 VoodooPS2Controller.kext
 WhateverGreen.kext
+AHCIPortInjector.kext

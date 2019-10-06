@@ -18,3 +18,9 @@ Kexts (all to EFI/Clover/kexts/Other):
 * BrcmFirmwareRepo.kext and BrcmPatchRAM2.kext  2.2.10 (from this guide: https://www.tonymacx86.com/threads/broadcom-wifi-bluetooth-guide.242423/)
 * VoodooPS2Controller.kext  2.0.3 (from acidanthera as it's newer than RehabMan's)
 For config starting point, I'll use config_HD615_620_630_640_650.plist from RehabMan.
+
+Tried booting, didn't work. Got "Still waiting for root device" with scrambled text. Thought it may be related to booting from USB drive, so I have moved all this WIP config to ESP partition of my SSD (and copied working one to pendrive). Tried again, same thing.
+Adding new kext:
+* AHCIPortInjector.kext (no version, from InsanelyMac)
+IT BOOTS, omg it does. WAY sooner than expected. I got flashed with some ugly colors during Apple logo loading, also touchpad does not work but other than that I am amazed.
+
