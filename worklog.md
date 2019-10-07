@@ -77,3 +77,12 @@ First I'll change Audio>Inject to NO (String). Second, ./gfxutil -f HDEF outputs
 Aaand there it is, both work right away. Microphone works as well, only headphones don't.
 Ok so what's cool is that lid closing works now, I suppose that may be either beacuse of BatteryManager or BacklightFixup. Anyway the screen disables, the laptop goes to sleep (after about 30 seconds), after opening it wakes back. Audio still works after wakinng, no panics, no nothing.
 However, now with lid open it wakes up immediately after sleeping "by hand" (Menu>Sleep). This may perhaps be caused by USB?
+
+For now only things left to do (that I can think of) are:
+* USB
+* Instant wake with lid open (perhaps with closed too, only it's not visible due to display disabled)
+* Native Power Management for extra battery life
+* Backlight hotkeys, this one actually triggered the whole rebuilding process
+* Headphones (sound + mic possibly?)
+After that only cosmetic changes - hide Recovery, add dark theme for Clover, re-enable SIP
+
