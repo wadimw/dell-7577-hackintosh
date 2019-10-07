@@ -306,7 +306,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>13</integer>
+			<string>NO</string>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -398,8 +398,8 @@
 				<data></data>
 				<key>#hda-gfx</key>
 				<string>onboard-1</string>
-				<key>#layout-id</key>
-				<integer>3</integer>
+				<key>layout-id</key>
+				<integer>13</integer>
 				<key>#no-controller-patch</key>
 				<integer>1</integer>
 			</dict>

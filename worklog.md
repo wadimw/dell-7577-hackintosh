@@ -30,11 +30,11 @@ at least until implementing VoodooI2C.
 
 For now it works. Currently
 Not working:
-* Audio
-* Backlight
+* ~~Audio~~ Headphones
+* ~~Backlight~~
 * Backlight keys
-* Advanced trackpad
-* Lid closing - neither screen off nor sleep
+* ~~Advanced trackpad~~
+* ~~Lid closing - neither screen off nor sleep~~
 * ~~dGPU disable - in IORegExp it sits under PEGP@0 (10de 1c20)~~
 Working:
 * Boot
@@ -65,3 +65,15 @@ Finally add:
 This however once again causes VoodooPS2 Keyboard to not work, so I am replacing it back with  
 * VoodooPS2Controller.kext  2.0.3 (from acidanthera)
 Both keyboard and touchpad (with all gestures) work after that. 
+
+02-10-2019
+For backlight fix I will be using
+* AppleBacklightFixup.kext  1.0.2
+with its SSDT-PNLF.aml. It works right away.
+For battery
+* ACPIBatteryManager.kext   1.90.1
+Audio: I will follow https://github.com/acidanthera/AppleALC/wiki/Installation-and-usage
+First I'll change Audio>Inject to NO (String). Second, ./gfxutil -f HDEF outputs DevicePath = PciRoot(0x0)/Pci(0x1f,0x3). In config.plist there already is such device, so I'll uncomment #layout-id and set it to 13 as this was used before.
+Aaand there it is, both work right away. Microphone works as well, only headphones don't.
+Ok so what's cool is that lid closing works now, I suppose that may be either beacuse of BatteryManager or BacklightFixup. Anyway the screen disables, the laptop goes to sleep (after about 30 seconds), after opening it wakes back. Audio still works after wakinng, no panics, no nothing.
+However, now with lid open it wakes up immediately after sleeping "by hand" (Menu>Sleep). This may perhaps be caused by USB?
