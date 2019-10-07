@@ -9,3 +9,5 @@ VirtualSMC.kext
 VoodooPS2Controller.kext
 WhateverGreen.kext
 AHCIPortInjector.kext
+VoodooI2CHID.kext
+VoodooI2C.kext

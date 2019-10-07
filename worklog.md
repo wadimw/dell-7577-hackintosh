@@ -51,3 +51,17 @@ I will now restore my SMBIOS with Clover Configurator because it is annoying tha
 Except successful SMBIOS serial number change nothing else has changed, so I'll remove the boot flag. Now to the ACPI disassembly and patching to disable the humming of fans.
 
 By adding SSDT-DDGPU.dsl the dGPU is successfully disabled.
+
+Now on to implementing VoodooI2C. First emulate Windows by hotpatching DSDT (_OSI -> XOSI) and adding SSDT-XOSI.dsl. Then add two kext pathes for AppleIntelI2C. Instead of patching whole DSDT I'll be hotpatching:
+So hotpatch rename _CRS to XCRS and _STA to XSTA.
+To do that, I must target method definition (as here https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/ in Rename and Replace). I have generated mixed listing of DSDT, found _SB.PCI0.I2C1.TPD1._CRS at 34640 FEAA as 14 33 5F 43 52 53 00 with further body A0 0E 95 4F 53 59 53 0B DC 07 (.3_CRS....OSYS...). I wish to replace it to XCRS, so it should be 14 33 58 but I'll skip 14 33 (method definition and method length) and add some body instead. Thus replacing 5F 43 52 53 00 A0 0E 95 (_CRS....) with 58 43 52 53 00 A0 0E 95 (XCRS....).
+It turns out it won't work because three methods start with
+Method (_CRS, 0, NotSerialized) { If (LLess (OSYS, 0x07DC))
+So I won't be able to distinguish them by hotpatching. I will use normal DSDT patch instead.
+Change manually GPIO._STA to always return 0x0F, TPD1 SBFG pin list to 0x1B and TPD1._CRS to always concatenate SBFB and SBFG.
+Finally add:
+* VoodooI2CHID.kext 2.2
+* VoodooI2C.kext    2.2
+This however once again causes VoodooPS2 Keyboard to not work, so I am replacing it back with  
+* VoodooPS2Controller.kext  2.0.3 (from acidanthera)
+Both keyboard and touchpad (with all gestures) work after that. 
