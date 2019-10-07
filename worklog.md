@@ -2,7 +2,7 @@
 
 In this file I will keep step by step log of what I chose to do, so I'll be able to recreate config in case of BIOS update or find errors in my reasoning if something does not work.
 
-06-10-2019
+## 06-10-2019
 WIP config will be tested on 16GB USB3 pendrive formatted as GPT via Disk Utility.
 In the beginning following https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/
 I'll use Dids Clover v2.5k_r5093 installed from .pkg
@@ -29,19 +29,22 @@ Since trackpad not working prevents me from checking anything else (I don't have
 at least until implementing VoodooI2C.
 
 For now it works. Currently
+
 Not working:
 * ~~Audio~~ Headphones
 * ~~Backlight~~
-* Backlight keys
+* ~~Backlight keys~~
 * ~~Advanced trackpad~~
 * ~~Lid closing - neither screen off nor sleep~~
 * ~~dGPU disable - in IORegExp it sits under PEGP@0 (10de 1c20)~~
+
 Working:
 * Boot
 * Wifi
 * iGPU identifies correctly
 * Graphics (werid flash no more)
 * Sleep (I'm surprised)
+
 Can't check:
 * 5GHz WiFi (don't have it currently)
 * Bluetooth (my card is probably broken, because it does not work on Windows too)
@@ -66,7 +69,7 @@ This however once again causes VoodooPS2 Keyboard to not work, so I am replacing
 * VoodooPS2Controller.kext  2.0.3 (from acidanthera)
 Both keyboard and touchpad (with all gestures) work after that. 
 
-02-10-2019
+## 02-10-2019
 For backlight fix I will be using
 * AppleBacklightFixup.kext  1.0.2
 with its SSDT-PNLF.aml. It works right away.
@@ -79,10 +82,15 @@ Ok so what's cool is that lid closing works now, I suppose that may be either be
 However, now with lid open it wakes up immediately after sleeping "by hand" (Menu>Sleep). This may perhaps be caused by USB?
 
 For now only things left to do (that I can think of) are:
-* USB
-* Instant wake with lid open (perhaps with closed too, only it's not visible due to display disabled)
+* ~~USB~~
+* ~~Instant wake with lid open (perhaps with closed too, only it's not visible due to display disabled)~~
 * Native Power Management for extra battery life
-* Backlight hotkeys, this one actually triggered the whole rebuilding process
+* ~~Backlight hotkeys, this one actually triggered the whole rebuilding process~~
 * Headphones (sound + mic possibly?)
 After that only cosmetic changes - hide Recovery, add dark theme for Clover, re-enable SIP
 
+For USB I already have UsbInjectAll, so I'll apply SSDT-UIAC.dsl I have previously done by myself. This works beautifully also fixing Instant Wake issue as expected.
+For backlight buttons, following this comment https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/post-1773229 I'll first enable OSID>XSID rename, then add BRT6>BRTX rename and SSDT-BRT6.dsl from https://github.com/Nihhaar/Hackintosh-Dell-7567 
+And here it is, after almost a year of using my hack I can finally use my normal backlight buttons instead of shitty Karabiner remaps which always left me confused after switching back to Windows. All that time, simply because I didn't understand that BRT6 dsl needed pairing with BRT6 rename hotpatch.
+
+On Nihhaar's Github I have also spotted a hotpatch for VoodooI2C (and a .dsl obviously) which uses TgtBridge, I need to look into that.

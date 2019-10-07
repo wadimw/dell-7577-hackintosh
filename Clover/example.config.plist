@@ -31,7 +31,7 @@
 					<key>Comment</key>
 					<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>T1NJRA==</data>
 					<key>Replace</key>
@@ -146,6 +146,16 @@
 					<data>VklEXwhfQURSDAAAAgA=</data>
 					<key>Replace</key>
 					<data>SUdQVQhfQURSDAAAAgA=</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>(Backlight Keys) Rename Method BRT6 to BRTX (add-on SSDT-BRT6.aml)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>FCBCUlQ2Ag==</data>
+					<key>Replace</key>
+					<data>FCBCUlRYAg==</data>
 				</dict>
 			</array>
 		</dict>
