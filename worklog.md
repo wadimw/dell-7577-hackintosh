@@ -84,13 +84,25 @@ However, now with lid open it wakes up immediately after sleeping "by hand" (Men
 For now only things left to do (that I can think of) are:
 * ~~USB~~
 * ~~Instant wake with lid open (perhaps with closed too, only it's not visible due to display disabled)~~
-* Native Power Management for extra battery life
+* ~~Native Power Management for extra battery life~~
 * ~~Backlight hotkeys, this one actually triggered the whole rebuilding process~~
 * Headphones (sound + mic possibly?)
-After that only cosmetic changes - hide Recovery, add dark theme for Clover, re-enable SIP
+~~After that only cosmetic changes - hide Recovery, add dark theme for Clover, re-enable SIP~~
 
 For USB I already have UsbInjectAll, so I'll apply SSDT-UIAC.dsl I have previously done by myself. This works beautifully also fixing Instant Wake issue as expected.
 For backlight buttons, following this comment https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/post-1773229 I'll first enable OSID>XSID rename, then add BRT6>BRTX rename and SSDT-BRT6.dsl from https://github.com/Nihhaar/Hackintosh-Dell-7567 
 And here it is, after almost a year of using my hack I can finally use my normal backlight buttons instead of shitty Karabiner remaps which always left me confused after switching back to Windows. All that time, simply because I didn't understand that BRT6 dsl needed pairing with BRT6 rename hotpatch.
 
 On Nihhaar's Github I have also spotted a hotpatch for VoodooI2C (and a .dsl obviously) which uses TgtBridge, I need to look into that.
+
+In RehabMan's guide for Power Management https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/ first thing is disabling hibernation by
+sudo pmset -a hibernatemode 0
+sudo rm /var/vm/sleepimage
+sudo mkdir /var/vm/sleepimage
+sudo pmset -a standby 0
+sudo pmset -a autopoweroff 0
+sudo pmset -a powernap 0
+So I'll do that. Later there is "Note: If you followed the guide linked above, and you have a Haswell or later CPU, there is nothing for you to do here, as CPU PM is already enabled with the plists provided by the guide." and also "In order to use HWP, use an SMBIOS that is enabled for HWP... currently MacBook9,1, MacBookPro13,x (and now MacBookPro14,x, MacBookPro15,x). Also, since HWP tends to cause the xcpm_idle to be invoked, make sure the xcpm_idle patch (courtesy of PikeRAlpha) is enabled. It is default in all current plists provided by my Clover laptop guide." so I guess there is nothing more to do with that.
+
+Now re-enabling SIP (CsrActiveConfig 0x67>0x00) because I'm going to inject kexts only via C/k/O. Added VM and Recovery to hide, set the theme to clover minimal dark.
+That would be it. Apparently only thing left are headphones which I don't use often on Hack so I will get to them some day probably.

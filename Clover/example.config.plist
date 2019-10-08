@@ -211,7 +211,7 @@
 		<integer>5</integer>
 	</dict>
 	<key>Comment</key>
-	<string>This file is for 10.12.6+ with native KabyLake support</string>
+	<string>Dell Inspiron 15 7577 (GTX1060 6GB, FHD)</string>
 	<key>Devices</key>
 	<dict>
 		<key>AddProperties</key>
@@ -408,10 +408,10 @@
 				<data></data>
 				<key>#hda-gfx</key>
 				<string>onboard-1</string>
-				<key>layout-id</key>
-				<integer>13</integer>
 				<key>#no-controller-patch</key>
 				<integer>1</integer>
+				<key>layout-id</key>
+				<integer>13</integer>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -464,6 +464,8 @@
 		</dict>
 		<key>Hide</key>
 		<array>
+			<string>Recovery</string>
+			<string>VM</string>
 			<string>Preboot</string>
 		</array>
 		<key>Mouse</key>
@@ -483,7 +485,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>BGM</string>
+		<string>clover-theme-minimal-dark</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -592,7 +594,7 @@
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x67</string>
+		<string>0x00</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
