@@ -69,7 +69,7 @@ This however once again causes VoodooPS2 Keyboard to not work, so I am replacing
 * VoodooPS2Controller.kext  2.0.3 (from acidanthera)
 Both keyboard and touchpad (with all gestures) work after that. 
 
-## 02-10-2019
+## 07-10-2019
 For backlight fix I will be using
 * AppleBacklightFixup.kext  1.0.2
 with its SSDT-PNLF.aml. It works right away.
@@ -93,6 +93,7 @@ For USB I already have UsbInjectAll, so I'll apply SSDT-UIAC.dsl I have previous
 For backlight buttons, following this comment https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/post-1773229 I'll first enable OSID>XSID rename, then add BRT6>BRTX rename and SSDT-BRT6.dsl from https://github.com/Nihhaar/Hackintosh-Dell-7567 
 And here it is, after almost a year of using my hack I can finally use my normal backlight buttons instead of shitty Karabiner remaps which always left me confused after switching back to Windows. All that time, simply because I didn't understand that BRT6 dsl needed pairing with BRT6 rename hotpatch.
 
+## 08-10-2019
 On Nihhaar's Github I have also spotted a hotpatch for VoodooI2C (and a .dsl obviously) which uses TgtBridge, I need to look into that.
 
 In RehabMan's guide for Power Management https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/ first thing is disabling hibernation by
@@ -109,3 +110,5 @@ That would be it. Apparently only thing left are headphones which I don't use of
 
 I applied VoodooI2C hotpatch from Nihhaar and removed patched DSDT. It works too so I'll keep it this way.
 Except from headphones one more thnig to do could be fixing sensors (temperature).
+
+It turns out that sadly hotplugging Thunderbolt>HDMI adapter causes system to panic, and after reboot adapter does not work anyway. It did in previous config (even hotplugging) so I need to investigate.
