@@ -106,3 +106,6 @@ So I'll do that. Later there is "Note: If you followed the guide linked above, a
 
 Now re-enabling SIP (CsrActiveConfig 0x67>0x00) because I'm going to inject kexts only via C/k/O. Added VM and Recovery to hide, set the theme to clover minimal dark.
 That would be it. Apparently only thing left are headphones which I don't use often on Hack so I will get to them some day probably.
+
+I applied VoodooI2C hotpatch from Nihhaar and removed patched DSDT. It works too so I'll keep it this way.
+Except from headphones one more thnig to do could be fixing sensors (temperature).
