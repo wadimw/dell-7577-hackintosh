@@ -112,3 +112,14 @@ I applied VoodooI2C hotpatch from Nihhaar and removed patched DSDT. It works too
 Except from headphones one more thnig to do could be fixing sensors (temperature).
 
 It turns out that sadly hotplugging Thunderbolt>HDMI adapter causes system to panic, and after reboot adapter does not work anyway. It did in previous config (even hotplugging) so I need to investigate.
+
+## 09-10-2019
+Looks like spoofing GPU to be from Skylake rather than KabyLake fixes the issue (idea from here https://www.tonymacx86.com/threads/readme-common-problems-and-workarounds-on-10-14-mojave.255823/). I don't know if there is any other way to fix that, so I'll use what works for now at least. Also worth noting, that system information reports only 24-bit color depth on built-in display (without spoofing it reported 30) and 30 on external display. I don't see much of a difference except for the fact, that shadows on builtin are not banded anymore (they were before spoofing).
+
+https://www.tonymacx86.com/threads/faq-read-first-laptop-frequent-questions.164990/ is it really set to 32MB now? This may be the culprit.
+
+I have also noticed that I still have trouble with USB Instant Wake (which didn't manifest earlier due to not having stuff plugged I guess).
+Todos for now:
+* USB instant wake
+* Headphones
+* Temperature sensors
