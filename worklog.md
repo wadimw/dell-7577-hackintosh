@@ -96,13 +96,13 @@ And here it is, after almost a year of using my hack I can finally use my normal
 ## 08-10-2019
 On Nihhaar's Github I have also spotted a hotpatch for VoodooI2C (and a .dsl obviously) which uses TgtBridge, I need to look into that.
 
-In RehabMan's guide for Power Management https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/ first thing is disabling hibernation by
-sudo pmset -a hibernatemode 0
-sudo rm /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
-sudo pmset -a standby 0
-sudo pmset -a autopoweroff 0
-sudo pmset -a powernap 0
+In RehabMan's guide for Power Management https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/ first thing is disabling hibernation by  
+sudo pmset -a hibernatemode 0  
+sudo rm /var/vm/sleepimage  
+sudo mkdir /var/vm/sleepimage  
+sudo pmset -a standby 0  
+sudo pmset -a autopoweroff 0  
+sudo pmset -a powernap 0  
 So I'll do that. Later there is "Note: If you followed the guide linked above, and you have a Haswell or later CPU, there is nothing for you to do here, as CPU PM is already enabled with the plists provided by the guide." and also "In order to use HWP, use an SMBIOS that is enabled for HWP... currently MacBook9,1, MacBookPro13,x (and now MacBookPro14,x, MacBookPro15,x). Also, since HWP tends to cause the xcpm_idle to be invoked, make sure the xcpm_idle patch (courtesy of PikeRAlpha) is enabled. It is default in all current plists provided by my Clover laptop guide." so I guess there is nothing more to do with that.
 
 Now re-enabling SIP (CsrActiveConfig 0x67>0x00) because I'm going to inject kexts only via C/k/O. Added VM and Recovery to hide, set the theme to clover minimal dark.
@@ -123,3 +123,7 @@ Todos for now:
 * USB instant wake
 * Headphones
 * Temperature sensors
+
+I have tried installing Catalina. To even boot the installer, I needed to add SSDT-ECUSBX.dsl (don't know what does it do, will need to look into that). With it the installation worked fine, I have done a clean install. It turns out however, that VoodooI2CHID stopped loading. Thanks to ben9923 from VoodooI2C Gitter I have found out that to make it work I need to add IOGraphicsFamily.kext to ForceKextsToLoad (also invalidating system kext cache might be important here as well, others report that neither helps but copying IOGF to C/k/O does help in the end).
+
+With that set Catalina works fine. There is however another issue with graphics - with external monitor plugged in, wallpaper on internal display gets ever so slightly misaligned leaving a black bar on the right side. This may not be an issue, but it's a bit annoying and proves that graphics is not fixed up correctly after all.
