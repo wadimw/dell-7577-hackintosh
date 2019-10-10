@@ -120,10 +120,12 @@ https://www.tonymacx86.com/threads/faq-read-first-laptop-frequent-questions.1649
 
 I have also noticed that I still have trouble with USB Instant Wake (which didn't manifest earlier due to not having stuff plugged I guess).
 Todos for now:
-* USB instant wake
+* ~~USB instant wake~~
 * Headphones
 * Temperature sensors
 
 I have tried installing Catalina. To even boot the installer, I needed to add SSDT-ECUSBX.dsl (don't know what does it do, will need to look into that). With it the installation worked fine, I have done a clean install. It turns out however, that VoodooI2CHID stopped loading. Thanks to ben9923 from VoodooI2C Gitter I have found out that to make it work I need to add IOGraphicsFamily.kext to ForceKextsToLoad (also invalidating system kext cache might be important here as well, others report that neither helps but copying IOGF to C/k/O does help in the end).
 
 With that set Catalina works fine. There is however another issue with graphics - with external monitor plugged in, wallpaper on internal display gets ever so slightly misaligned leaving a black bar on the right side. This may not be an issue, but it's a bit annoying and proves that graphics is not fixed up correctly after all.
+
+Meanwhile I've added USB instant wake fix pulled from Nihhaar's repo. It works properly, laptop does not wake immediately after sleeping anymore.
