@@ -19,6 +19,7 @@ Audio: Realtek ALC3246
 * Sensors (temperature etc.)
 * Bluetooth? (may work, can't test)
 * SD reader? (rather won't didn't check)
+* Fingerprint scanner (3rd party don't work with Apple)
 
 ## Bootloader
 [Clover v2.5k_r5093](https://github.com/Dids/clover-builder/releases)
