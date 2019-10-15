@@ -6,20 +6,25 @@ OS: macOS Catalina 10.15.0
 
 CPU: i5-7300HQ (Kaby Lake)  
 iGPU: Intel HD Graphics 630, 64MB video memory  
-dGPU: Nvidia GTX 1060 Max-Q - disabled  
+dGPU: Nvidia GTX 1060 Max-Q (disabled)  
 Screen: 15" FHD  
 Disk: M2 SATA SSD Crucial MX500  
 WiFi: Lenovo Broadcomm BCM94352Z  
-Bluetooth: none, hardware broken  
+Bluetooth: none, hardware broken (not working under Windows as well)  
 RAM: 8GB DDR4  
 Audio: Realtek ALC3246  
 
 ## Not working
-* Headphones jack
+* Combo jack microphone (headphones and built-in mic work)
 * Sensors (temperature etc.)
 * Bluetooth? (may work, can't test)
 * SD reader? (rather won't didn't check)
 * Fingerprint scanner (3rd party don't work with Apple)
+
+## Known issues
+* After unplugging headphones loudspeakers turn back on only after ~25 seconds
+* Waking from sleep sometimes causes Sleep Wake Failure panic (rarely, hard to reproduce)
+* Touchpad may not work in recovery mode (acidanthera's VoodooPS2controller does not work with my touchpad and VoodooI2C HID won't work without IOGraphicsFamily, use RehabMan's VoodooPS2controller instead)
 
 ## Bootloader
 [Clover v2.5k_r5093](https://github.com/Dids/clover-builder/releases)
@@ -66,3 +71,4 @@ sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 sudo pmset -a powernap 0
 ```
+In Energy Saver disable Power Nap, optionally disable Put hard disks to sleep, Wake for network access.
