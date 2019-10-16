@@ -141,3 +141,6 @@ After some random issues I've decided to go back to spoofing Skylake Laptop card
 Headphones: I'm testing ALC3246 layouts one by one (from https://github.com/acidanthera/applealc/wiki/supported-codecs). 5, 11, 13, 14: Only speakers work. 21 - headphones work as well, cleanly. Line-in microphone gets detected, but only picks fuzz. 22, 28 don't at all. 56 only speakers work. 57 speakers don't, headphones do, line in detected but only fuzz. 66 both speakers and headphones do work, but mic doesn't, also internal mic stops working. 97 speakers don't work, plugging headphones caused audio to crash (crossed sign).
 
 It turns out though that with layout 21 after unplugging headphones speakers start to work after quite some time, about 25 seconds. It's still the best I have for now. I have also discovered that clamshell mode works. It also turns out, that going back to SKL does not really solve Sleep Wake Failure panics. It is however hard to reproduce this issue so I might just stick with it.
+
+## 16-10-2019
+Unplugging external monitor sometimes causes WindowServer to crash, so going back to Kaby Lake Desktop graphics id (which was working good on mojave). Will try to patch stuff according to this https://www.tonymacx86.com/threads/guide-intel-igpu-hdmi-dp-audio-all-sandy-bridge-kaby-lake-and-likely-later.189495/
