@@ -15,7 +15,7 @@ RAM: 8GB DDR4
 Audio: Realtek ALC3246  
 
 ## Not working
-* Combo jack microphone (headphones and built-in mic work)
+* Combo jack microphone and headphones (built-in mic works, headphones technically do with layout 21 but after unplugging speakers don't get back up)
 * Sensors (temperature etc.)
 * Bluetooth? (may work, can't test)
 * SD reader? (rather won't didn't check)
@@ -24,6 +24,7 @@ Audio: Realtek ALC3246
 ## Known issues
 * After unplugging headphones loudspeakers turn back on only after ~25 seconds
 * Waking from sleep sometimes causes Sleep Wake Failure panic (rarely, hard to reproduce)
+* WindowServer crashes sometimes when unplugging monitor (rarely as wll)
 * Touchpad may not work in recovery mode (acidanthera's VoodooPS2controller does not work with my touchpad and VoodooI2C HID won't work without IOGraphicsFamily, use RehabMan's VoodooPS2controller instead)
 
 ## Bootloader

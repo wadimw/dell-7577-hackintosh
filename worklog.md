@@ -144,3 +144,20 @@ It turns out though that with layout 21 after unplugging headphones speakers sta
 
 ## 16-10-2019
 Unplugging external monitor sometimes causes WindowServer to crash, so going back to Kaby Lake Desktop graphics id (which was working good on mojave). Will try to patch stuff according to this https://www.tonymacx86.com/threads/guide-intel-igpu-hdmi-dp-audio-all-sandy-bridge-kaby-lake-and-likely-later.189495/
+
+So I have restored default RehabMan's patches to iGPU, then disabled 32MB memory patching. After some poking it turned out that patching 0105 instead of 0306 allows me to use 0x591b0000 and work with external monitor, no panics (don't know about WindowServer crashes or Sleep Wake Failures yet). Audio over it works as well. Sadly, with layout 21 unplugging headphones did not turn speakers back on anymore, so I'll do testing again:
+```
+ID  Speakers    Headphones  Sp. restore HDMI Audio  Built-in Mic    Headphone Mic
+5   ok          no          ok          ok          no              no
+11  ok          no          ok          ok          ok              no
+13  ok          no          ok          ok          ok              no
+14  ok          no          ok          ok          ok              no
+21  ok          ok          no          ok          ok              no
+22  no          no          ok          ok          no              no
+28  ok          crackle     ok          ok          no              no
+56  ok          no          ok          ok          ok              no
+57  no          ok          no          ok          ok              no
+66  ok          ok          delayed     ok          no              no
+97  no          no          no          no          no              no
+```
+With that tested, I'm going back to 13 because I'd rather not need to reboot every so often to get my speakers back. I am setting layout id via boot arguments now in case I really need heacphones.
