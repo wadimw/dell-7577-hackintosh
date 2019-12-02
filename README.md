@@ -3,7 +3,7 @@
 If You want to use this repo for Your laptop, keep in mind that:
 * In actual Clover/ACPI/Patched there should be .aml files, not .dsl; You need to compile each into .aml using MaciASL
 * You need to place actual drivers and kexts into Clover/drivers and Clover/kexts/Other; It's best to download kexts from their developers in the newest version.
-* example.config.plist does not contain full SMBIOS information, so that You won't use my serials. Rename it to config.plist, open with Clover Configurator, re-select SMBIOS and generate new serials [etc])(https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/). You can obviously skip that, but then You won't be able to use iMessage etc.
+* example.config.plist does not contain full SMBIOS information, so that You won't use my serials. Rename it to config.plist, open with Clover Configurator, re-select SMBIOS and generate new serials [etc](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/). You can obviously skip that, but then You won't be able to use iMessage etc.
 
 According to some, this config works properly with i7 configs as well as 1050. I don't know if it will for You, try it.
 
