@@ -161,3 +161,16 @@ ID  Speakers    Headphones  Sp. restore HDMI Audio  Built-in Mic    Headphone Mi
 97  no          no          no          no          no              no
 ```
 With that tested, I'm going back to 13 because I'd rather not need to reboot every so often to get my speakers back. I am setting layout id via boot arguments now in case I really need heacphones.
+
+## 01-12-2019
+Well it turns out that I brought my card's Bluetooth back to life! (by unplugging both main and CMOS battery and pressing Power a few times) In Windows it works but on macOS doesn't - so time to patch it. First obviously time to update all kexts.
+
+* Update Clover to r5099 from Dids.
+* AirportBrcmFixup to 2.0.4
+* AppleALC to 1.4.3
+* Lilu to 1.3.9
+* VirtualSMC to 1.0.9 (also worth noting that along the way I decided to replace ACPIBatteryManager with SMCBatteryManager and add SMCProcessor SMCSuperIO. I now will also add VirtualSmc.efi to Drivers)
+* VoodooPS2Controller to 2.0.4 (acidanthera's)
+* WhateverGreen to 1.3.4
+
+Now on to enabling Bluetooth. First of all, it is disabled in USBInjectAll configuration. After using -uia_ignore_rmcf it seems that it sits on HS04. This does not enable it yet in macOS, so following https://github.com/RehabMan/OS-X-BrcmPatchRAM readme replace BrcmFirmwareRepo to BrcmFirmwareData as I'm injecting everything from C/k/O. This didn't help too. Now removing BrcmFirmwareData.kext and BrcmPatchRAM2.kext completely. https://www.insanelymac.com/forum/topic/339175-brcmpatchram2-for-1015-catalina-broadcom-bluetooth-firmware-upload/ This may solve the issue later.

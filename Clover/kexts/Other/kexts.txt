@@ -1,12 +1,12 @@
-ACPIBatteryManager.kext
 AHCIPortInjector.kext
 AirportBrcmFixup.kext
 AppleALC.kext
 AppleBacklightFixup.kext
-BrcmFirmwareRepo.kext
-BrcmPatchRAM2.kext
 Lilu.kext
 RealtekRTL8111.kext
+SMCBatteryManager.kext
+SMCProcessor.kext
+SMCSuperIO.kext
 USBInjectAll.kext
 VirtualSMC.kext
 VoodooI2C.kext

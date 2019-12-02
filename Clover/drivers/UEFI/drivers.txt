@@ -1,3 +1,4 @@
 ApfsDriverLoader.efi
 AptioMemoryFix.efi
 HFSPlus.efi
+VirtualSmc.efi

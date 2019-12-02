@@ -44,12 +44,12 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 0, //USB2
                         "port", Buffer() { 3, 0, 0, 0 },
                     },
-                    /*
-                    "HS04", Package()
+                    "HS04", Package() //Internal bluetooth for Lenovo BCM94352Z
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 4, 0, 0, 0 },
                     },
+                    /*
                     "HS05", Package()
                     {
                         "UsbConnector", 3,
@@ -67,7 +67,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                     },
                     */
                     /*
-                    "HS08", Package() //Fingerprint scanner, can be disabled too
+                    "HS08", Package() //Fingerprint scanner, disabled
                     {
                         "UsbConnector", 255,
                         "port", Buffer() { 8, 0, 0, 0 },
