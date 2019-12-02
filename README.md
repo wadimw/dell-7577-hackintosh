@@ -7,6 +7,8 @@ If You want to use this repo for Your laptop, keep in mind that:
 
 According to some, this config works properly with i7 configs as well as 1050. I don't know if it will for You, try it.
 
+I am attaching my ready Clover folder under Releases. Note however that I advise against ever using whole config blindly - in particular You should always download all kexts directly from their developers and use latest available versions.
+
 ## System info
 Dell Inspiron 7577 Gaming  
 OS: macOS Catalina 10.15.0
