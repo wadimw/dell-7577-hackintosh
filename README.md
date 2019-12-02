@@ -11,7 +11,7 @@ I am attaching my ready Clover folder under Releases. Note however that I advise
 
 ## System info
 Dell Inspiron 7577 Gaming  
-OS: macOS Catalina 10.15.0
+OS: macOS Catalina 10.15.1
 
 CPU: i5-7300HQ (Kaby Lake)  
 iGPU: Intel HD Graphics 630 (64MB DVMT prealloc default)  
