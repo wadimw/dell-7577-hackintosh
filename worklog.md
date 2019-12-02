@@ -174,3 +174,9 @@ Well it turns out that I brought my card's Bluetooth back to life! (by unpluggin
 * WhateverGreen to 1.3.4
 
 Now on to enabling Bluetooth. First of all, it is disabled in USBInjectAll configuration. After using -uia_ignore_rmcf it seems that it sits on HS04. This does not enable it yet in macOS, so following https://github.com/RehabMan/OS-X-BrcmPatchRAM readme replace BrcmFirmwareRepo to BrcmFirmwareData as I'm injecting everything from C/k/O. This didn't help too. Now removing BrcmFirmwareData.kext and BrcmPatchRAM2.kext completely. https://www.insanelymac.com/forum/topic/339175-brcmpatchram2-for-1015-catalina-broadcom-bluetooth-firmware-upload/ This may solve the issue later.
+
+Turns out there is now BrcmPatchRAM3.kext maintained by acidanthera https://github.com/acidanthera/BrcmPatchRAM. Copied over 
+* BrcmBluetoothInjector.kext 2.5.0
+* BrcmFirmwareData.kext 2.5.0
+* BrcmPatchRAM3.kext 2.5.0
+Aaaaaaand it works! Tested on my AirPods. Won't test Continuity etc because I don't have any Apple devices.
