@@ -27,6 +27,7 @@ Audio: Realtek ALC3246
 * Sensors? (temperature etc. I have some kexts in place but I don't really check that on macOS anyway so idk if they work)
 * SD reader? (rather won't didn't check)
 * Fingerprint scanner (3rd party don't work with Apple)
+* HDMI port (since it's connected directly to dGPU which is disabled so it will never work; You can use USB-C/TB3 dongle instead)
 
 ## Known issues
 * (Only on layout-id 21) After unplugging headphones loudspeakers turn back on only after ~25 seconds
@@ -35,6 +36,7 @@ Audio: Realtek ALC3246
 ## BIOS
 * SATA mode - AHCI
 * Secure Boot - disabled
+* Legacy - off
 * Virtualization - both **not disabled** and they don't cause issues for me
 
 ## Bootloader
