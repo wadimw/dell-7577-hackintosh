@@ -1,7 +1,6 @@
 AHCIPortInjector.kext
 AirportBrcmFixup.kext
 AppleALC.kext
-AppleBacklightFixup.kext
 BrcmBluetoothInjector.kext
 BrcmFirmwareData.kext
 BrcmPatchRAM3.kext

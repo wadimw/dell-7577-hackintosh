@@ -50,7 +50,6 @@ All kexts injected via Clover.
 * AHCIPortInjector.kext - For "Still waiting for root device"
 * AirportBrcmFixup.kext - For WiFi
 * AppleALC.kext - For audio, inject layout 13 in config
-* AppleBacklightFixup.kext - For backlight control, pair with SSDT-PNLF
 * BrcmBluetoothInjector.kext - Bluetooth
 * BrcmFirmwareData.kext - Bluetooth
 * BrcmPatchRAM3.kext - Bluetooth

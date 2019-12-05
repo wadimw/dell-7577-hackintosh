@@ -180,3 +180,10 @@ Turns out there is now BrcmPatchRAM3.kext maintained by acidanthera https://gith
 * BrcmFirmwareData.kext 2.5.0
 * BrcmPatchRAM3.kext 2.5.0
 Aaaaaaand it works! Tested on my AirPods. Won't test Continuity etc because I don't have any Apple devices.
+
+# 05-12-2019
+I will get around to fix combo jack some day. This repo https://github.com/hackintosh-stuff/ComboJack worked for me togeether with layout 13, but I don't consider it an elegant solution so I removed it for now.
+
+Today I've also discovered that with dock Dell WD15 the third display is a copy of second (first being laptop's internal display). This is not the case on Windows where it works correctly, so I assume it's a problem with my graphics config.
+
+I have also removed AppleBacklightFixup.kext because I've found out it's superceded by WhateverGreen.
