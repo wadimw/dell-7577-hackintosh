@@ -189,4 +189,4 @@ Today I've also discovered that with dock Dell WD15 the third display is a copy 
 I have also removed AppleBacklightFixup.kext because I've found out it's superceded by WhateverGreen.
 
 # 06-12-2019
-I have finally got around to investigate SSDT-ECUSBX.dsl and it turns out Catalina apparently needs _SB_.PCI0.LPCB.EC so instead of emulating it (as did this file) I have enabled ECDV>EC rename in config.plist and it seems to work well.
+I have finally got around to investigate SSDT-ECUSBX.dsl and it turns out Catalina apparently needs _SB_.PCI0.LPCB.EC so instead of emulating it (as did this file) I have enabled ECDV>EC rename in config.plist and it seems to work well. I don't see any issues now, but for future reference https://www.tonymacx86.com/threads/guide-usb-power-property-injection-for-sierra-and-later.222266/ here is the guide for USBX stuff in case I need it.
