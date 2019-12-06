@@ -5,7 +5,7 @@ If You want to use this repo for Your laptop, keep in mind that:
 * You need to place actual drivers and kexts into Clover/drivers and Clover/kexts/Other; It's best to download kexts from their developers in the newest version.
 * example.config.plist does not contain full SMBIOS information, so that You won't use my serials. Rename it to config.plist, open with Clover Configurator, re-select SMBIOS and generate new serials [etc](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/). You can obviously skip that, but then You won't be able to use iMessage etc.
 
-According to some, this config works properly with i7 configs as well as 1050. I don't know if it will for You, try it.
+According to some, this config works properly with i7 configs as well as 1050. I don't know if it will for You, try it. I also suppose You should change SMBIOS from MacBookPro14,1 to MacBookPro14,3 for an i7.
 
 I am attaching my ready Clover folder under Releases. Note however that I advise against ever using whole config blindly - in particular You should always download all kexts directly from their developers and use latest available versions.
 
