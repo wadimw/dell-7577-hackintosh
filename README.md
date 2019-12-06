@@ -3,13 +3,15 @@
 If You want to use this repo for Your laptop, keep in mind that:
 * In actual Clover/ACPI/Patched there should be .aml files, not .dsl; You need to compile each into .aml using MaciASL
 * You need to place actual drivers and kexts into Clover/drivers and Clover/kexts/Other; It's best to download kexts from their developers in the newest version.
-* example.config.plist does not contain full SMBIOS information, so that You won't use my serials. Rename it to config.plist, open with Clover Configurator, re-select SMBIOS and generate new serials [etc])(https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/). You can obviously skip that, but then You won't be able to use iMessage etc.
+* example.config.plist does not contain full SMBIOS information, so that You won't use my serials. Rename it to config.plist, open with Clover Configurator, re-select SMBIOS and generate new serials [etc](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/). You can obviously skip that, but then You won't be able to use iMessage etc.
 
 According to some, this config works properly with i7 configs as well as 1050. I don't know if it will for You, try it.
 
+I am attaching my ready Clover folder under Releases. Note however that I advise against ever using whole config blindly - in particular You should always download all kexts directly from their developers and use latest available versions.
+
 ## System info
 Dell Inspiron 7577 Gaming  
-OS: macOS Catalina 10.15.0
+OS: macOS Catalina 10.15.1
 
 CPU: i5-7300HQ (Kaby Lake)  
 iGPU: Intel HD Graphics 630 (64MB DVMT prealloc default)  
@@ -25,6 +27,7 @@ Audio: Realtek ALC3246
 * Sensors? (temperature etc. I have some kexts in place but I don't really check that on macOS anyway so idk if they work)
 * SD reader? (rather won't didn't check)
 * Fingerprint scanner (3rd party don't work with Apple)
+* HDMI port (since it's connected directly to dGPU which is disabled so it will never work; You can use USB-C/TB3 dongle instead)
 
 ## Known issues
 * (Only on layout-id 21) After unplugging headphones loudspeakers turn back on only after ~25 seconds
@@ -33,6 +36,7 @@ Audio: Realtek ALC3246
 ## BIOS
 * SATA mode - AHCI
 * Secure Boot - disabled
+* Legacy - off
 * Virtualization - both **not disabled** and they don't cause issues for me
 
 ## Bootloader
