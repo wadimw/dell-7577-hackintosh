@@ -28,6 +28,7 @@ Audio: Realtek ALC3246
 * SD reader? (rather won't didn't check)
 * Fingerprint scanner (3rd party don't work with Apple)
 * HDMI port (since it's connected directly to dGPU which is disabled so it will never work; You can use USB-C/TB3 dongle instead)
+* With Dell WD15 dock (USB-C) both monitors connected to it were mirrored; This is not the case on Windows so I suppose it's due to my config.
 
 ## Known issues
 * (Only on layout-id 21) After unplugging headphones loudspeakers turn back on only after ~25 seconds
@@ -72,7 +73,6 @@ All kexts injected via Clover.
 ## ACPI patches
 * SSDT-BRT6 - Backlight hotkeys, pair with BRTX hotpatch
 * SSDT-DDGPU - Disable dGPU
-* SSDT-ECUSBX - This was necessary to run Catalina, not sure what it does
 * SSDT-PNLF - Backlight control
 * SSDT-PRW - Prevent USB instant wake
 * SSDT-UIAC - Disable unused USB ports

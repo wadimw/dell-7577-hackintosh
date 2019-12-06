@@ -187,3 +187,6 @@ I will get around to fix combo jack some day. This repo https://github.com/hacki
 Today I've also discovered that with dock Dell WD15 the third display is a copy of second (first being laptop's internal display). This is not the case on Windows where it works correctly, so I assume it's a problem with my graphics config.
 
 I have also removed AppleBacklightFixup.kext because I've found out it's superceded by WhateverGreen.
+
+# 06-12-2019
+I have finally got around to investigate SSDT-ECUSBX.dsl and it turns out Catalina apparently needs _SB_.PCI0.LPCB.EC so instead of emulating it (as did this file) I have enabled ECDV>EC rename in config.plist and it seems to work well.
