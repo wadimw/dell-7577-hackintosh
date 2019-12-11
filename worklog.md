@@ -186,7 +186,16 @@ I will get around to fix combo jack some day. This repo https://github.com/hacki
 
 Today I've also discovered that with dock Dell WD15 the third display is a copy of second (first being laptop's internal display). This is not the case on Windows where it works correctly, so I assume it's a problem with my graphics config.
 
-I have also removed AppleBacklightFixup.kext because I've found out it's superceded by WhateverGreen.
+I have also removed AppleBacklightFixup.kext because I've found out it's superceded by WhateverGreen (integrated into it).
 
 # 06-12-2019
-I have finally got around to investigate SSDT-ECUSBX.dsl and it turns out Catalina apparently needs _SB_.PCI0.LPCB.EC so instead of emulating it (as did this file) I have enabled ECDV>EC rename in config.plist and it seems to work well. I don't see any issues now, but for future reference https://www.tonymacx86.com/threads/guide-usb-power-property-injection-for-sierra-and-later.222266/ here is the guide for USBX stuff in case I need it.
+I have finally got around to investigate SSDT-ECUSBX.dsl and it turns out Catalina apparently needs \_SB\_.PCI0.LPCB.EC so instead of emulating it (as did this file) I have enabled ECDV>EC rename in config.plist and it seems to work well. I don't see any issues now, but for future reference https://www.tonymacx86.com/threads/guide-usb-power-property-injection-for-sierra-and-later.222266/ here is the guide for USBX stuff in case I need it.
+
+I will soon test again all available layouts for ALC256. Meanwhile updated
+* AppleALC.kext to 1.4.4
+* Lilu.kext to 1.4.0
+* WhateverGreen.kext to 1.3.5
+I am also not sure what changed but HDMI audio isn't listed anymore, come to think of it - for quite some time actually.
+
+# 11-12-2019
+Reading AppleALC wiki page, I found out they recommend disabling HDAS->HDEF patch so I've disabled it.
