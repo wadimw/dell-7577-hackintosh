@@ -7,7 +7,7 @@ Based on [Dortania's Guide](https://dortania.github.io/OpenCore-Install-Guide/) 
 I advise against using my EFI directly, treat it as a reference for creating Your own. Read The Guide, manuals for every kext etc.
 
 ## Thanks
-Whole hackintosh community, @lersy
+Whole hackintosh community, [@lersy](https://github.com/lersy/Dell-7577-Hackintosh-macos-Opencore)
 
 ## Hardware
 Dell Inspiron 7577 Gaming
