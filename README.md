@@ -70,6 +70,9 @@ Custom:
 - SSDT-SBUS-MCHC.aml – Enable SMBus (stock Dortania matched my hardware actually)
 - SSDT-OCWork-DELL.aml – Enable brightness keys and power LED
 
+## Pre-install
+Generate Your own SMBIOS.
+
 ## Post-install
 - ComboJack  
 https://github.com/hackintosh-stuff/ComboJack to enable both headphones and their microphone.
