@@ -1,91 +1,87 @@
 # dell-7577-hackintosh
+Now with Big Sur and OpenCore!
 
-If You want to use this repo for Your laptop, keep in mind that:
-* In actual Clover/ACPI/Patched there should be .aml files, not .dsl; You need to compile each into .aml using MaciASL
-* You need to place actual drivers and kexts into Clover/drivers and Clover/kexts/Other; It's best to download kexts from their developers in the newest version.
-* example.config.plist does not contain full SMBIOS information, so that You won't use my serials. Rename it to config.plist, open with Clover Configurator, re-select SMBIOS and generate new serials [etc](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/). You can obviously skip that, but then You won't be able to use iMessage etc.
+Based on [Dortania's Guide](https://dortania.github.io/OpenCore-Install-Guide/) and my previous Clover hack.
 
-According to some, this config works properly with i7 configs as well as 1050. I don't know if it will for You, try it. I also suppose You should change SMBIOS from MacBookPro14,1 to MacBookPro14,3 for an i7.
+## Attention
+I advise against using my EFI directly, treat it as a reference for creating Your own. Read The Guide, manuals for every kext etc.
 
-I am attaching my ready Clover folder under Releases. Note however that I advise against ever using whole config blindly - in particular You should always download all kexts directly from their developers and use latest available versions.
+## Thanks
+Whole hackintosh community, @lersy
 
-## System info
-Dell Inspiron 7577 Gaming  
-OS: macOS Catalina 10.15.1
+## Hardware
+Dell Inspiron 7577 Gaming
 
-CPU: i5-7300HQ (Kaby Lake)  
+CPU: Intel Core i5-7300HQ (Kaby Lake)  
 iGPU: Intel HD Graphics 630 (64MB DVMT prealloc default)  
-dGPU: Nvidia GTX 1060 Max-Q (disabled)  
-Screen: 15" FHD  
-Disk: M2 SATA SSD Crucial MX500  
-WiFi and Bluetooth: Lenovo Broadcomm BCM94352Z (FRU 04x6020)  
+dGPU: Nvidia GeForce GTX 1060 Max-Q  
 RAM: 16GB DDR4  
-Audio: Realtek ALC3246  
+Chipset: Intel HM175  
+Audio: VEN_8086&DEV_A171 – Intel CM238, VEN_10EC&DEV_0256 – Realtek ALC256 (ALC3246)  
+Eth: Intel RTL8168  
+WiFi and Bluetooth: Lenovo Broadcomm BCM94352Z (FRU 04x6020)  
+Screen: 15" FHD 60Hz  
+BIOS version: 1.11.0
 
 ## Not working
-* Combo jack microphone and headphones (built-in mic works; headphones technically do work with layout 21 but after unplugging them, speakers sometimes don't get back up. You can use it with boot arg alcid=21)
-* Sensors? (temperature etc. I have some kexts in place but I don't really check that on macOS anyway so idk if they work)
-* SD reader? (rather won't didn't check)
-* Fingerprint scanner (3rd party don't work with Apple)
-* HDMI port (since it's connected directly to dGPU which is disabled so it will never work; You can use USB-C/TB3 dongle instead)
-* With Dell WD15 dock (USB-C) both monitors connected to it were mirrored; This is not the case on Windows so I suppose it's due to my config.
-
-## Known issues
-* (Only on layout-id 21) After unplugging headphones loudspeakers turn back on only after ~25 seconds
-* Touchpad may not work in recovery mode (acidanthera's VoodooPS2controller does not work with my touchpad and VoodooI2C HID won't work without IOGraphicsFamily, use RehabMan's VoodooPS2controller instead)
-
-## BIOS
-* SATA mode - AHCI
-* Secure Boot - disabled
-* Legacy - off
-* Virtualization - both **not disabled** and they don't cause issues for me
-
-## Bootloader
-[Clover v2.5k_r5099](https://github.com/Dids/clover-builder/releases)
-Standard install. Drivers used:
-* ApfsDriverLoader.efi
-* AptioMemoryFix.efi
-* HFSPlus.efi
-* VirtualSmc.efi
-SIP enabled (0x00).
+- ???
+- Combo Jack Headphones+Mic partially (not 100% reliably but I was pretty successful with https://github.com/hackintosh-stuff/ComboJack)
+- DRM (not supported on Big Sur yet)
+- Ambient Light Sensor
+- USB-C/TB3 hotplug (external display over USB-C>HDMI dongle is hotpluggable though)
+- SD Card reader (never will iirc)
+- Fingerprint (never will)
+- HDMI (never will; You can use DisplayPort over USB-C)
+- Power LED
 
 ## Kexts
-All kexts injected via Clover.
+Kext | Version | Why
+--- | :---: | ---
+AirportBrcmFixup.kext | 2.1.2 | Wi-Fi; for Big Sur AirPortBrcm4360_Injector.kext must be disabled
+AppleALC.kext | 1.5.5 | Audio, using layout 13
+BrcmBluetoothInjector.kext | 2.5.6 | Bluetooth
+BrcmFirmwareData.kext | 2.5.6 | Bluetooth
+BrcmPatchRAM3.kext | 2.5.6 | Bluetooth
+BrightnessKeys.kext | 1.0.1 | Handles brightness up/down fn keys (instead of BRT6 patch)
+CPUFriend.kext | 1.2.2 | CPU Power Management
+CPUFriendDataProvider.kext | n/a | Created with fewtarius fork of CPUFriendFriend commit `ae123c0` – settings: 800MHz, balance power, bias 07, additional savings enabled
+CtlnaAHCIPort.kext | 341.0.2 | SATA controller; I had "still waiting for root device" on Catalina fixed by AHCIPortInjector.kext and guide stated this kext should replace it
+Lilu.kext | 1.5.0 | General
+RealtekRTL8111.kext | 2.4.0d5 | Ethernet
+SMCBatteryManager.kext | 1.1.9 | VirtualSMC plugin; battery
+SMCLightSensor.kext | 1.1.9 | VirtualSMC plugin; ambient light sensor
+SMCProcessor.kext | 1.1.9 | VirtualSMC plugin; CPU
+SMCSuperIO.kext | 1.1.9 | VirtualSMC plugin; fan speed
+USB-Map-Dell7577.kext | n/a | Created manually with Dortania guide; see inside kext or in journal for map details
+VirtualSMC.kext | 1.1.9 | General
+VoodooI2C.kext | 2.5.2 | Touchpad I2C
+VoodooI2CHID.kext | 2.5.2 | Touchpad I2C
+VoodooPS2Controller.kext | 2.1.9 | Keyboard; PS2 touchpad plugins disabled because it is handled by VoodooI2C
+WhateverGreen.kext | 1.4.5 | Graphics
 
-* AHCIPortInjector.kext - For "Still waiting for root device"
-* AirportBrcmFixup.kext - For WiFi
-* AppleALC.kext - For audio, inject layout 13 in config
-* BrcmBluetoothInjector.kext - Bluetooth
-* BrcmFirmwareData.kext - Bluetooth
-* BrcmPatchRAM3.kext - Bluetooth
-* Lilu.kext - Framework for other kexts
-* RealtekRTL8111.kext - For ethernet
-* SMCBatteryManager.kext - Battery detection, percentage
-* SMCProcessor.kext - Processor sensors, didn't really check if they work
-* SMCSuperIO.kext - IO sensors, didn't really check if they work
-* USBInjectAll.kext - For USB full config, pair with SSDT-UIAC
-* VirtualSMC.kext - General
-* VoodooI2C.kext - For touchpad
-* VoodooI2CHID.kext - For touchpad, pair with SSDT-VI2C and force load IOGraphicsFamily, may not work in Recovery/Install
-* VoodooPS2Controller.kext - For keyboard. If touchpad does not work in Recovery, replace with RehabMan's
-* WhateverGreen.kext - For graphics
-
-## ACPI patches
-* SSDT-BRT6 - Backlight hotkeys, pair with BRTX hotpatch
-* SSDT-DDGPU - Disable dGPU
-* SSDT-PNLF - Backlight control
-* SSDT-PRW - Prevent USB instant wake
-* SSDT-UIAC - Disable unused USB ports
-* SSDT-VI2C - VoodooI2C touchpad pinning, pair with two hotpatches
-* SSDT-XOSI - Fix for Darwin OS in ACPI
+## ACPI
+Prebuilt from Dortania's guide:
+- SSDT-EC-USBX-LAPTOP.aml
+- SSDT-PLUG-DRTNIA.aml
+- SSDT-PNLF.aml
+Custom:
+- SSDT-GPI0-VI2C.aml – enables I2C Precision Touchpad (incorporates Dortania's SSDT-GPI0)
+- SSDT-HPET.aml – Patch out IRQ Conflicts (done with SSDTTime)
+- SSDT-SBUS-MCHC.aml – Enable SMBus (stock Dortania matched my hardware actually)
+- SSDT-OCWork-DELL.aml – Enable brightness keys and power LED
 
 ## Post-install
+- ComboJack  
+https://github.com/hackintosh-stuff/ComboJack to enable both headphones and their microphone.
+- Sleep  
 ```
-sudo pmset -a hibernatemode 0
-sudo rm /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
-sudo pmset -a standby 0
-sudo pmset -a autopoweroff 0
-sudo pmset -a powernap 0
+sudo pmset autopoweroff 0
+sudo pmset powernap 0
+sudo pmset standby 0
+sudo pmset proximitywake 0
 ```
-In Energy Saver disable Power Nap, optionally disable Put hard disks to sleep, Wake for network access.
+execute these commands for safety (see Dortania https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
+
+
+## Multi-booting
+I do not recommend using OpenCore to boot Windows. Injection should probably be disabled for other OSes, but it still may vreak something. Better to use rEFInd of just BIOS F12.
