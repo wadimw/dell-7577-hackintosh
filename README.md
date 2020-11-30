@@ -9,8 +9,11 @@ I advise against using my EFI directly, treat it as a reference for creating You
 ## Thanks
 Whole hackintosh community, [@lersy](https://github.com/lersy/Dell-7577-Hackintosh-macos-Opencore)
 
-## Hardware
+## Info
 Dell Inspiron 7577 Gaming
+
+MacOS 11.0.1 Big Sur
+OpenCore 0.6.3
 
 CPU: Intel Core i5-7300HQ (Kaby Lake)  
 iGPU: Intel HD Graphics 630 (64MB DVMT prealloc default)  
@@ -32,7 +35,6 @@ BIOS version: 1.11.0
 - SD Card reader (never will iirc)
 - Fingerprint (never will)
 - HDMI (never will; You can use DisplayPort over USB-C)
-- Power LED
 
 ## Kexts
 Kext | Version | Why
@@ -74,8 +76,6 @@ Custom:
 Generate Your own SMBIOS.
 
 ## Post-install
-- ComboJack  
-https://github.com/hackintosh-stuff/ComboJack to enable both headphones and their microphone.
 - Sleep  
 ```
 sudo pmset autopoweroff 0
@@ -83,8 +83,9 @@ sudo pmset powernap 0
 sudo pmset standby 0
 sudo pmset proximitywake 0
 ```
-execute these commands for safety (see Dortania https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
-
+execute these commands for safety (see Dortania https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)  
+- ComboJack  
+https://github.com/hackintosh-stuff/ComboJack to enable both headphones and their microphone.  
 
 ## Multi-booting
-I do not recommend using OpenCore to boot Windows. Injection should probably be disabled for other OSes, but it still may vreak something. Better to use rEFInd of just BIOS F12.
+I do not recommend using OpenCore to boot Windows. Injection should probably be disabled for other OSes, but it still may break something. Better to use rEFInd of just BIOS F12.
