@@ -12,7 +12,7 @@ Whole hackintosh community, [@lersy](https://github.com/lersy/Dell-7577-Hackinto
 ## Info
 Dell Inspiron 7577 Gaming
 
-MacOS 11.0.1 Big Sur
+MacOS 11.0.1 Big Sur  
 OpenCore 0.6.3
 
 CPU: Intel Core i5-7300HQ (Kaby Lake)  
@@ -66,6 +66,7 @@ Prebuilt from Dortania's guide:
 - SSDT-EC-USBX-LAPTOP.aml
 - SSDT-PLUG-DRTNIA.aml
 - SSDT-PNLF.aml
+
 Custom:
 - SSDT-GPI0-VI2C.aml – enables I2C Precision Touchpad (incorporates Dortania's SSDT-GPI0)
 - SSDT-HPET.aml – Patch out IRQ Conflicts (done with SSDTTime)
@@ -82,8 +83,9 @@ sudo pmset autopoweroff 0
 sudo pmset powernap 0
 sudo pmset standby 0
 sudo pmset proximitywake 0
-```
-execute these commands for safety (see Dortania https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)  
+```  
+execute these commands for safety (see Dortania https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
+
 - ComboJack  
 https://github.com/hackintosh-stuff/ComboJack to enable both headphones and their microphone.  
 
