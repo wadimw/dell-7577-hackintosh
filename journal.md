@@ -197,10 +197,11 @@ Also adding support for SMBUS.
 Finally fixed external display by copying over my old settings from Clover. Apart from accidental whitespace in property keys (removal of which didn't help), I added device-id 16590000 and hda-gfx onboard-1. After that external display over USB-C dongle works, and even is hotpluggable! (Even though XHC for the USBC still does not enumerate in system and behaves like earlier – I'm not so sure anymore if the USB part of the plug ever worked correctly. This is TB3 Alpine Ridge controller which seems to cause massive pain in the hackintoshers asses https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#fixing-thunderbolt so I don't know if I'll ever try to fix that). This also meant, that USPMap kext would work mainly ok (though it did try to remap the other controller as well, so the manually created version is better).
 
 Todos:
-- status LED
 - fix imessage
 - consider fixing USBC
 
 Brightness keys are now handled by acidanthera's kext as per OpenCore guide. To get them running \_SB.ACOS must be set to 0x80 so that they even work.
 
-Tried USB-C 3.1 Hub and it seems that when plugged before reboot, the bus works with full speed. Power LED does not work yet. Disabling OpenCore BootProtect so it won't keep snatching the first position in boot order (I mainly use Windows).
+Tried USB-C 3.1 Hub and it seems that when plugged before reboot, the bus works with full speed. Power LED behaves as on Windows regardless of setting \_SB.ACSE - it is on only when laptop is plugged in, always off otherwise.
+
+Disabling OpenCore BootProtect so it won't keep snatching the first position in boot order (I mainly use Windows).
