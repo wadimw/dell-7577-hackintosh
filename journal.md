@@ -68,19 +68,9 @@ Debug: enabling AppleDebug ApplePanic DisableWatchDog and setting Target to 67. 
 csractiveconfig left to 0. Adding bootargs debug=0x100, alcid=13 (for ALC256), -wegnoegpu. Blanking prev-lang:kbd.
 
 #### PlatformInfo
-// Using GenSMBIOS. According to guide I should probably use MacBookPro14,3 due to having HD 630, but for now will go with 14,1 since it matches my CPU better.
-// Type:         MacBookPro14,1  
-// Serial:       C02Y1EZ4HV29  
-// Board Serial: C02853104CDHWVPAD  
-// SmUUID:       1806E887-6BB7-47C4-BA52-50CB87151106  
-
 Using SMBIOS from my previous Clover install to keep serial etc.
-Type:         MacBookPro14,1
-Serial:       C02TD0URHV29
-Board Serial: C02710404CDHWVPFB
-SmUUID:       B5A9157D-62DE-4706-BA36-E0D951847AE0
 
-For Generic/ROM will use MAC address of Ethernet card: a4:4c:c8:41:cb:5f.
+For Generic/ROM will use MAC address of Ethernet card: _redacted_.
 
 #### UEFI
 Enabling ReleaseUsbOwnership.
