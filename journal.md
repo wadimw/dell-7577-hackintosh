@@ -68,7 +68,7 @@ Debug: enabling AppleDebug ApplePanic DisableWatchDog and setting Target to 67. 
 csractiveconfig left to 0. Adding bootargs debug=0x100, alcid=13 (for ALC256), -wegnoegpu. Blanking prev-lang:kbd.
 
 #### PlatformInfo
-Using SMBIOS from my previous Clover install to keep serial etc.
+Using SMBIOS MacBookPro14,1 (best match for my CPU) with Serial, SmUUID and Board Serial from my previous Clover install.
 
 For Generic/ROM will use MAC address of Ethernet card: _redacted_.
 
