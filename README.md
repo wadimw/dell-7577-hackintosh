@@ -34,7 +34,12 @@ BIOS version: 1.11.0
 - USB-C/TB3 hotplug (external display over USB-C>HDMI dongle is hotpluggable though)
 - SD Card reader (never will iirc)
 - Fingerprint (never will)
-- HDMI (never will; You can use DisplayPort over USB-C)
+- HDMI (but USBC works, see notes below)
+
+## External displays
+GTX 1060 version of this laptop has HDMI port wired directly to the Nvidia card, which means there is no way to use it on Mojave+. Instead, You can use e.g. an USB-C (DisplayPort)>HDMI dongle, USB-C docking station, TB3 accessories (not tested).
+
+GTX1050(Ti) versions reportedly have HDMI port connected to iGPU however, so yes You can use it! I don't have means to test it so I won't include config for this in my repo – head over to [@lersy](https://github.com/lersy/Dell-7577-Hackintosh-macos-Opencore) instead.
 
 ## Kexts
 Kext | Version | Why
