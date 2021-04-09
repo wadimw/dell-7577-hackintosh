@@ -1,6 +1,8 @@
 # dell-7577-hackintosh
 Now with Big Sur and OpenCore!
 
+The repo is archived because I barely use my hack these days (though I might unarchive it one day and add updates if I get back to it).
+
 Based on [Dortania's Guide](https://dortania.github.io/OpenCore-Install-Guide/) and my previous Clover hack.
 
 ## Attention
